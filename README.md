@@ -1,14 +1,14 @@
 # fivem-api
 
-Whitelist ve oyuncu yönetimi için REST API. SQL/Mongo ve Redis ile performans ve ölçeklenebilirlik.
+REST API for server stats, whitelist, and user management. SQL/Mongo plus Redis for performance and scalability.
 
-## Komutlar
+## Scripts
 - npm run dev
 - npm run build
 - npm run prisma:migrate
 - npm run prisma:rollback
 
-## Ortam
+## Env
 - DATABASE_URL
 - REDIS_URL
 - PORT
