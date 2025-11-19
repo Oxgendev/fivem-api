@@ -1,0 +1,19 @@
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+generator client { provider = "prisma-client-js" }
+
+model Player {
+  id         Int      @id @default(autoincrement())
+  name       String
+  steamHex   String   @unique
+  discordId  String?
+  createdAt  DateTime @default(now())
+  whitelist  WhitelistEntry[]
+}
+
+model WhitelistEntry {
+  id        Int      @id @default(autoincrement())
+  playerId  Int
+  reason    String?
+  createdAt DateTime @default(now())
+  player    Player   @relation(fields: [playerId], references: [id], onDelete: Cascade)
+}
